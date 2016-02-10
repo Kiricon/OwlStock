@@ -1,0 +1,22 @@
+{
+  "name": "MaterialStock",
+  "homepage": "https://github.com/Kiricon/MaterialStock",
+  "authors": [
+    "Dominic Valenciana <kiricon@live.com>"
+  ],
+  "description": "Material Design Stock Application",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0"
+  }
+}

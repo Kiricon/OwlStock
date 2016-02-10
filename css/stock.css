@@ -1,0 +1,144 @@
+html {
+  display:table;
+  width: 100%;
+}
+body {
+  margin: 0px;
+  background: #fafafa;
+  font-family: arial,sans-serif;
+  overflow:hidden;
+}
+
+::-webkit-scrollbar {
+    width:9px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    background:rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    background:rgba(0,0,0,0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:rgba(0,0,0,0.4);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background:rgba(0,0,0,0.05);
+}
+.positive {
+  color:#00C853;
+}
+
+.negative {
+  color:#F44336;
+}
+
+#topPanel {
+  color: #FAFAFA;
+  display:table;
+  margin: 0px auto;
+  padding-top: 10px;
+}
+#topPanel span {
+  padding: 10px 10px;
+}
+#topPanel span:hover {
+  cursor: pointer;
+  color: #FFC107;
+  border-bottom: 2px solid #FAFAFA;
+  padding: 9px 10px;
+}
+
+.selected {
+  border-bottom: 2px solid #FAFAFA;
+  padding: 9px 10px;
+}
+
+#stockList {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: white;
+  text-transform:uppercase;
+}
+
+#stockTicker {
+  padding: 10px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  background:
+}
+
+#stockList div {
+  padding: 5px 5px 0px 5px;
+  cursor: pointer;
+}
+
+#stockList div:hover {
+  opacity: 0.7;
+}
+
+#main {
+    position: absolute;
+    top: 50%; left: 50%;
+    margin: -50px -150px;
+    width: 400px; height: 100px;
+}
+
+.ui-autocomplete {
+  background: #424242;
+  width: 200px !important;
+  color: #E0E0E0;
+  padding: 0px 0px 0px 10px !important;
+  height: 200px !important;
+  overflow-y: auto;
+}
+.ui-autocomplete li {
+  list-style-type: none;
+  padding: 5px 0px 0px 0px;
+}
+
+#search {
+  background: #212121;
+  border-color: #757575;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  color: #E0E0E0;
+  font-size: 1.2em;
+  outline: none;
+  cursor: pointer;
+}
+.ui-helper-hidden-accessible {
+  display:none !important;
+}
+
+#priceShow {
+  color: white;
+font-size: 2em;
+position: fixed;
+margin: 0px auto;
+width: 100%;
+text-align: center;
+}
+
+#infoPanel {
+  color: #BDBDBD;
+  overflow-y: auto;
+}
+
+#leftStats div, #rightStats div {
+  padding: 7px;
+}
+
+#companyBio {
+  font-size: 1em;
+  padding-top: 30px;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head lang="en">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+
+<body ng-controller="MainController">
+  <!--
+  <div id="stockList">
+    <div ng-repeat="stock in stocks" ng-click="showStock(stock.symbol)">
+    {{stock.symbol}} {{stock.LastTradePriceOnly}} <span ng-class="stockColor(stock.PercentChange)">{{stock.PercentChange}}</span>
+    </div>
+  </div>
+-->
+  <div id="stockTicker">
+   {{ticker.Name}} {{ticker.Symbol}} $<span odometer="ticker.Ask"></span><span ng-class="stockColor(ticker.PercentChange)"> {{ticker.PercentChange}}</span>
+  </div>
+  <div id="priceShow">
+    $<span odometer="display" odometer-options="{duration: 100}"></span>
+  </div>
+  <div style="position: absolute; top: 0px; right: 0px;">
+    <input id="search" ng-model="symbol" type="text" style="text-transform:uppercase; width: 200px">
+    <button style="background: none; border: none; cursor:pointer;" ng-click="getStock()">
+      <svg fill="#BDBDBD" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </button>
+  </div>
+<canvas id="graph" style="margin-top: 10px; float:left;"></canvas>
+<canvas id="main" style="float:left;"></canvas>
+<div id="infoPanel" style="float:left; width: 26%; padding: 0px 2%; height:300px;">
+  <div style="font-size: 2em;">{{ticker.Name}}</div>
+  <div id="stats">
+    <div id="leftStats" style="width:50%; float:left;">
+      <div>Open: {{ticker.Open}}</div>
+      <div>Today's High: {{ticker.DaysHigh}}</div>
+      <div>Today's Low: {{ticker.DaysLow}}</div>
+      <div>52 Wk High: {{ticker.YearHigh}}</div>
+      <div>52 Wk Low: {{ticker.YearLow}}</div>
+    </div>
+  <div id="rightStats" style="width: 50%; float: left;">
+  <div>Volume: {{ticker.Volume}}</div>
+  <div>Average Volume: {{ticker.AverageDailyVolume}}</div>
+  <div>Market Cap: {{ticker.MarketCapitalization}}</div>
+  <div>P/E Ratio: {{ticker.PERatio}}</div>
+  <div>Div/Yield: {{ticker.DividendYield}}</div>
+</div>
+<div id="companyWebsite"><a href="{{company.website}}" target="_blank" style="font-size: 1.2em; color:#757575; text-decoration: none;">{{company.website}}</a></div>
+<div id="companyIndustry"> <span style="font-size: 1.2em; color:#757575">Industry:</span> {{company.industry}}</div>
+<div id="companyBio">
+  <span style="font-size: 1.2em; color:#757575">Buisness Summary</span> <br/>{{company.bio}}
+</div>
+</div>
+</div>
+<div id="topPanel" style="clear:both;">
+  <span ng-click="changeTime('day')" ng-class="{selected: checkSelected('day')}">1D</span>
+  <span ng-click="changeTime('week')" ng-class="{selected: checkSelected('week')}">5D</span>
+  <span ng-click="changeTime('month')" ng-class="{selected: checkSelected('month')}">1M</span>
+  <span ng-click="changeTime('3month')" ng-class="{selected: checkSelected('3month')}">3M</span>
+  <span ng-click="changeTime('6month')" ng-class="{selected: checkSelected('6month')}">6M</span>
+  <span ng-click="changeTime('year')" ng-class="{selected: checkSelected('year')}">1Y</span>
+</div>
+<div class="container" style="display:none;">
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+</div>
+<link href="css/stock.css" rel="stylesheet" type="text/css">
+<link href="css/animation.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/odometer-theme-default.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/odometer.min.js"></script>
+<script src="js/angular-odometer.min.js"></script>
+<script src="js/app.js"></script>
+
+<!--<script src="js/autocomplete.js"></script> -->
+</body>
+
+</html>
